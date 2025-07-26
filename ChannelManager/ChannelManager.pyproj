@@ -1,0 +1,47 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>30b6aff2-1f2e-438d-bdad-1dcc24825c67</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>ChannelManager.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>ChannelManager</Name>
+    <RootNamespace>ChannelManager</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ChannelSettings.py" />
+    <Compile Include="ChannelManager.py" />
+    <Compile Include="events\VoiceChannelEvents.py" />
+    <Compile Include="GameVoiceChannel.py" />
+    <Compile Include="GameVoiceChannelManager.py" />
+    <Compile Include="NicknameUtils.py" />
+    <Compile Include="ui\ManagementUI.py" />
+    <Compile Include="ui\RecruitmentOwnerUI.py" />
+    <Compile Include="ui\RecruitmentUI.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="events\" />
+    <Folder Include="ui\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
