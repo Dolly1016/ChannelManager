@@ -57,7 +57,7 @@ class GameVoiceChannelManager:
             if voice_channel.category is None:
                 return
 
-            setting = ChannelSettings().get_setting(voice_channel.category.id)
+            setting = ChannelSettings().get_channel_setting(voice_channel.category.id)
             if setting is None:
                 return
 

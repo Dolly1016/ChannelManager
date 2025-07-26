@@ -12,7 +12,7 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 @bot.event
 async def on_ready():
-    modules = ["events.VoiceChannelEvents"]
+    modules = ["events.VoiceChannelEvents", "commands.CommandTree"]
 
     # Load cogs
     for module in modules:

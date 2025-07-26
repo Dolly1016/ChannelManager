@@ -23,16 +23,23 @@
   <ItemGroup>
     <Compile Include="ChannelSettings.py" />
     <Compile Include="ChannelManager.py" />
+    <Compile Include="commands\CommandTree.py" />
+    <Compile Include="database\UserData.py" />
     <Compile Include="events\VoiceChannelEvents.py" />
     <Compile Include="GameVoiceChannel.py" />
     <Compile Include="GameVoiceChannelManager.py" />
     <Compile Include="NicknameUtils.py" />
+    <Compile Include="ui\DeleteTemplateUI.py" />
     <Compile Include="ui\ManagementUI.py" />
+    <Compile Include="ui\NextOwnerUI.py" />
     <Compile Include="ui\RecruitmentOwnerUI.py" />
     <Compile Include="ui\RecruitmentUI.py" />
+    <Compile Include="ui\ToggleUserStateUI.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="events\" />
+    <Folder Include="database\" />
+    <Folder Include="commands\" />
     <Folder Include="ui\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />

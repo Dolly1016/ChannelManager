@@ -18,10 +18,14 @@ class RecruitmentOwnerView(discord.ui.View):
     @discord.ui.button(label="募集主になる", style=discord.ButtonStyle.primary, emoji="💬")
     async def become_admin_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         result = await self.callbacks.on_recruitment_owner(interaction)
-        if result[0]:
-            await interaction.response.send_message(f"{interaction.user.mention}さんが募集主になりました。", ephemeral=False, delete_after=5)
-        else:
-            await interaction.response.send_message(result[1], ephemeral=True, delete_after=5)
+
+        try:
+            if result[0]:
+                await interaction.response.defer(ephemeral=True)
+            else:
+                await interaction.response.send_message(result[1], ephemeral=True, delete_after=5)
+        except Exception:
+            pass
 
 
 

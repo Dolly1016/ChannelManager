@@ -34,7 +34,7 @@ class VoiceChannelEvents(commands.Cog):
         vc = GameVoiceChannelManager().get_channel(after.voice.channel.id)
 
         if vc is not None:
-            vc.on_update_member()
+            await vc.on_update_member()
 
 async def setup(bot):
     await bot.add_cog(VoiceChannelEvents(bot))

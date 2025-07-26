@@ -1,7 +1,7 @@
 ﻿from typing import Tuple
 from discord import Member
 
-spectator_prefix = "👀"
+spectator_prefix = "👀観戦＠"
 old_spectator_prefix = "観戦"
 
 def is_spectator(member: Member):
@@ -38,7 +38,7 @@ async def change_to_spectator(member: Member) -> Tuple[bool, str]:
         await member.edit(nick=spectator_prefix + old_nick)
         return [True, "名前を変更しました。"]
     except Exception as e:
-        return [False, "名前を変更できませんでした。\nサーバープロフィールを編集し、自身のニックネームの先頭に👀を付けてください。"]
+        return [False, "名前を変更できませんでした。\nサーバープロフィールを編集し、自身のニックネームの先頭に「" + spectator_prefix +"」を付けてください。"]
         
 
 async def change_to_player(member: Member) -> Tuple[bool, str]:
@@ -59,4 +59,4 @@ async def change_to_player(member: Member) -> Tuple[bool, str]:
         await member.edit(nick=nick if len(nick) > 0 else None)
         return [True, "名前を変更しました。"]
     except Exception as e:
-        return [False, "名前を変更できませんでした。\nサーバープロフィールを編集し、自身のニックネームの先頭から👀を取り除いてください。"]
+        return [False, "名前を変更できませんでした。\nサーバープロフィールを編集し、自身のニックネームの先頭から「" + spectator_prefix + "」を取り除いてください。"]
